@@ -1,0 +1,5 @@
+playwright==1.40.0
+pytest==8.4.0
+pytest-xdist
+python-dotenv
+pydantic
