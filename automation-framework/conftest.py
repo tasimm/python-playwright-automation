@@ -1,8 +1,8 @@
+from playwright.sync_api import sync_playwright
+from utils.user_factory import generate_user
 import pytest
 import os
 import time
-from playwright.sync_api import sync_playwright
-
 
 @pytest.fixture(scope="session")
 def browser():
@@ -41,3 +41,7 @@ def pytest_runtest_makereport(item, call):
     rep = outcome.get_result()
 
     setattr(item, "rep_" + rep.when, rep)
+
+@pytest.fixture
+def user_data():
+    return generate_user()

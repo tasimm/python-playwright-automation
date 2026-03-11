@@ -19,4 +19,5 @@ class LoginPage(BasePage):
         self.click(self.LOGIN_BUTTON)
 
     def error_visible(self):
-        return self.is_visible(self.ERROR_MESSAGE)
+        self.page.wait_for_selector(self.ERROR_MESSAGE, timeout=5000)
+        return self.page.locator(self.ERROR_MESSAGE).is_visible()
