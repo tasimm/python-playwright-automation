@@ -1,4 +1,5 @@
 from core.base_page import BasePage
+from playwright.sync_api import expect
 
 
 class LoginPage(BasePage):
@@ -8,16 +9,24 @@ class LoginPage(BasePage):
     EMAIL_INPUT = 'input[data-qa="login-email"]'
     PASSWORD_INPUT = 'input[data-qa="login-password"]'
     LOGIN_BUTTON = 'button[data-qa="login-button"]'
-    ERROR_MESSAGE = 'p:has-text("Your email or password is incorrect!")'
+    ERROR_MESSAGE = "form[action='/login'] p"
 
     def load(self):
         self.navigate(self.LOGIN_URL)
 
     def login(self, email, password):
-        self.fill(self.EMAIL_INPUT, email)
-        self.fill(self.PASSWORD_INPUT, password)
-        self.click(self.LOGIN_BUTTON)
+        self.page.fill(self.EMAIL_INPUT, email)
+        self.page.fill(self.PASSWORD_INPUT, password)
+        self.page.click(self.LOGIN_BUTTON)
+
+        # Wait for either success or error state
+        self.page.wait_for_load_state("networkidle")
 
     def error_visible(self):
-        self.page.wait_for_selector(self.ERROR_MESSAGE, timeout=5000)
-        return self.page.locator(self.ERROR_MESSAGE).is_visible()
+        error = self.page.locator(self.ERROR_MESSAGE)
+
+        try:
+            expect(error).to_be_visible(timeout=5000)
+            return True
+        except:
+            return False
