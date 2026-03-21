@@ -2,13 +2,13 @@
 
 🧱 Core Framework Architecture
 
-✅ Playwright + pytest automation framework
+- Playwright + pytest automation framework
 
-✅ Page Object Model (POM) architecture
+- Page Object Model (POM) architecture
 
-✅ BasePage abstraction layer (shared actions/utilities)
+- BasePage abstraction layer (shared actions/utilities)
 
-✅ Clean separation of concerns (pages vs tests vs data)
+- Clean separation of concerns (pages vs tests vs data)
 
 
 🧪 Test Design & Coverage
