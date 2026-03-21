@@ -1,6 +1,6 @@
 # python-playwright-automation
 
-Core Framework Architecture
+🧱 Core Framework Architecture
 
 ✅ Playwright + pytest automation framework
 
@@ -11,7 +11,7 @@ Core Framework Architecture
 ✅ Clean separation of concerns (pages vs tests vs data)
 
 
-Test Design & Coverage
+🧪 Test Design & Coverage
 
 ✅ End-to-end (E2E) user workflows
 
@@ -22,7 +22,7 @@ Test Design & Coverage
 ✅ Data-driven testing (pytest parametrize)
 
 
-Test Data Management
+🔄 Test Data Management
 
 ✅ Faker-based dynamic test data (via user_factory.py)
 
@@ -32,7 +32,8 @@ Test Data Management
 
 ✅ User lifecycle management (create → use → delete)
 
-Execution & Performance
+
+⚙️ Execution & Performance
 
 ✅ Parallel test execution (pytest-xdist)
 
@@ -41,7 +42,7 @@ Execution & Performance
 ✅ Dockerized test execution
 
 
-Stability & Reliability (Big Upgrade)
+🧠 Stability & Reliability
 
 ✅ Deterministic waits using Playwright expect()
 
@@ -52,7 +53,7 @@ Stability & Reliability (Big Upgrade)
 ✅ Retry logic (pytest-rerunfailures)
 
 
-Real-World Handling
+🧩 Real-World Handling
 
 ✅ Handling UI overlays / ads / iframes
 
@@ -61,7 +62,7 @@ Real-World Handling
 ✅ Navigation/state synchronization across pages
 
 
-Debugging & Observability
+📸 Debugging & Observability
 
 ✅ Automatic screenshots on failure
 
