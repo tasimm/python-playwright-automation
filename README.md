@@ -1,6 +1,6 @@
 # python-playwright-automation
 
-#Core Framework Architecture
+Core Framework Architecture
 
 ✅ Playwright + pytest automation framework
 
