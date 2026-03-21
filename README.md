@@ -1,6 +1,6 @@
 # python-playwright-automation
 
-🧱 Core Framework Architecture
+✅ Core Framework Architecture
 
 - Playwright + pytest automation framework
 
@@ -13,59 +13,59 @@
 
 🧪 Test Design & Coverage
 
-✅ End-to-end (E2E) user workflows
+- End-to-end (E2E) user workflows
 
-✅ Positive test coverage
+- Positive test coverage
 
-✅ Negative test coverage
+- Negative test coverage
 
-✅ Data-driven testing (pytest parametrize)
+- Data-driven testing (pytest parametrize)
 
 
 🔄 Test Data Management
 
-✅ Faker-based dynamic test data (via user_factory.py)
+- Faker-based dynamic test data (via user_factory.py)
 
-✅ Unique user generation (avoids collisions)
+- Unique user generation (avoids collisions)
 
-✅ Structured test data injection into flows
+- Structured test data injection into flows
 
-✅ User lifecycle management (create → use → delete)
+- User lifecycle management (create → use → delete)
 
 
 ⚙️ Execution & Performance
 
-✅ Parallel test execution (pytest-xdist)
+- Parallel test execution (pytest-xdist)
 
-✅ Config-driven execution (pytest.ini)
+- Config-driven execution (pytest.ini)
 
-✅ Dockerized test execution
+- Dockerized test execution
 
 
 🧠 Stability & Reliability
 
-✅ Deterministic waits using Playwright expect()
+- Deterministic waits using Playwright expect()
 
-✅ Reduced flakiness (no reliance on sleep)
+- Reduced flakiness (no reliance on sleep)
 
-✅ State-based synchronization (UI readiness over timing)
+- State-based synchronization (UI readiness over timing)
 
-✅ Retry logic (pytest-rerunfailures)
+- Retry logic (pytest-rerunfailures)
 
 
 🧩 Real-World Handling
 
-✅ Handling UI overlays / ads / iframes
+- Handling UI overlays / ads / iframes
 
-✅ Robust interaction handling (scroll + visibility + readiness)
+- Robust interaction handling (scroll + visibility + readiness)
 
-✅ Navigation/state synchronization across pages
+- Navigation/state synchronization across pages
 
 
 📸 Debugging & Observability
 
-✅ Automatic screenshots on failure
+- Automatic screenshots on failure
 
-✅ Improved debugging workflow (-s, -v, page.pause())
+- Improved debugging workflow (-s, -v, page.pause())
 
-✅ Clear assertion patterns for UI state
+- Clear assertion patterns for UI state
