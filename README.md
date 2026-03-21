@@ -1,23 +1,53 @@
 # python-playwright-automation
 
-Current framework capabilities:
+Core Framework Architecture
 
 ✅ Playwright + pytest automation framework
+✅ Page Object Model (POM) architecture
+✅ BasePage abstraction layer (shared actions/utilities)
+✅ Clean separation of concerns (pages vs tests vs data)
 
-✅ Page Object Model architecture
+Test Design & Coverage
 
-✅ BasePage abstraction layer
+✅ End-to-end (E2E) user workflows
+- Register → Login → Delete account
+- Multi-page navigation flows
+✅ Positive test coverage
+- Valid login
+- Full account creation
+✅ Negative test coverage
+- Invalid login scenarios
+- Signup validation scenarios
+✅ Data-driven testing (pytest parametrize)
 
-✅ Faker dynamic test data
+Test Data Management
 
-✅ Login automation
+✅ Faker-based dynamic test data (via user_factory.py)
+✅ Unique user generation (avoids collisions)
+✅ Structured test data injection into flows
+✅ User lifecycle management (create → use → delete)
 
-✅ Signup workflow automation
+Execution & Performance
 
-✅ Full account creation automation
+✅ Parallel test execution (pytest-xdist)
+✅ Config-driven execution (pytest.ini)
+✅ Dockerized test execution
+
+Stability & Reliability (Big Upgrade)
+
+✅ Deterministic waits using Playwright expect()
+✅ Reduced flakiness (no reliance on sleep)
+✅ State-based synchronization (UI readiness over timing)
+✅ Retry logic (pytest-rerunfailures)
+
+Real-World Handling
+
+✅ Handling UI overlays / ads / iframes
+✅ Robust interaction handling (scroll + visibility + readiness)
+✅ Navigation/state synchronization across pages
+
+Debugging & Observability
 
 ✅ Automatic screenshots on failure
-
-✅ Playwright expect() assertions
-
-✅ Docker execution support
+✅ Improved debugging workflow (-s, -v, page.pause())
+✅ Clear assertion patterns for UI state
