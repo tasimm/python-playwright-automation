@@ -20,3 +20,25 @@ class BasePage:
 
     def get_title(self):
         return self.page.title()
+    
+    def handle_ads(self):
+        try:
+            # Try to close common ad overlays (iframe or button)
+            self.page.locator("iframe").first.wait_for(timeout=2000)
+
+            # Remove ALL iframes (safe for this site)
+            self.page.evaluate("""
+            document.querySelectorAll('iframe').forEach(el => el.remove());
+            """)
+
+            # Also remove possible overlay divs
+            self.page.evaluate("""
+                document.querySelectorAll('[id*="google"], [class*="overlay"]').forEach(el => el.remove());
+            """)
+
+        except:
+            pass
+
+    def safe_click(self, selector):
+        self.handle_ads()
+        self.page.click(selector)
