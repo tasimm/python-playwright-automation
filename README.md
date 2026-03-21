@@ -10,14 +10,8 @@ Core Framework Architecture
 Test Design & Coverage
 
 ✅ End-to-end (E2E) user workflows
-- Register → Login → Delete account
-- Multi-page navigation flows
 ✅ Positive test coverage
-- Valid login
-- Full account creation
 ✅ Negative test coverage
-- Invalid login scenarios
-- Signup validation scenarios
 ✅ Data-driven testing (pytest parametrize)
 
 Test Data Management
