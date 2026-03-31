@@ -5,10 +5,13 @@ class HomePage(BasePage):
 
     URL = "https://automationexercise.com"
 
+    # Home Page buttons
     SIGNUP_LOGIN_BUTTON = "a[href='/login']"
     CONTACT_US_BUTTON = "a[href='/contact_us']"
     TEST_CASES_BUTTON = "a[href='/test_cases']"
+    PRODUCTS_BUTTON = "a[href='/products']"
 
+    # ---------- NAVIGATE ----------
     def load(self):
         self.navigate(self.URL)
 
@@ -26,3 +29,6 @@ class HomePage(BasePage):
 
     def go_to_test_cases(self):
         self.safe_click(self.TEST_CASES_BUTTON)
+
+    def go_to_products(self):
+        self.click(self.PRODUCTS_BUTTON)
