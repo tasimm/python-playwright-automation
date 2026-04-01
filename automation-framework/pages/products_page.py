@@ -9,6 +9,7 @@ class ProductsPage:
     SEARCH_BUTTON = "#submit_search"
     PRODUCT_LIST = ".features_items"
     SEARCH_RESULTS = ".productinfo"
+    SEARCHED_PRODUCTS_HEADER = "h2:has-text('Searched Products')"
 
     ADD_TO_CART_BUTTON = ".product-overlay a.add-to-cart"
     VIEW_CART_BUTTON = "a[href='/view_cart']"
@@ -88,3 +89,7 @@ class ProductsPage:
             and self.page.locator(self.CONDITION).is_visible()
             and self.page.locator(self.BRAND).is_visible()
         )
+    
+    def verify_searched_products_visible(self):
+        # Ensure the searched products header is displayed
+        expect(self.page.locator(self.SEARCHED_PRODUCTS_HEADER)).to_be_visible(timeout=5000)
