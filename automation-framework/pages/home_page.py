@@ -18,10 +18,14 @@ class HomePage(BasePage):
     SUBSCRIPTION_BUTTON = "#subscribe"
     SUBSCRIPTION_SUCCESS = "text=You have been successfully subscribed!"
 
-    # ---------- NAVIGATE ----------
+    
     def load(self):
         # Load browser and navigate to base URL
         self.navigate(self.URL)
+
+    def scroll_to_footer(self):
+        # Scroll to bottom of page
+        self.page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
 
     def home_visible(self):
         # Verify home page is visible
@@ -31,6 +35,7 @@ class HomePage(BasePage):
         # Verify Test Cases page is visible
         return "test_cases" in self.page.url
 
+    # ---------- NAVIGATE ----------
     def go_to_signup_login(self):
         # Navigate to Signup/Login page
         self.safe_click(self.SIGNUP_LOGIN_BUTTON)
@@ -51,10 +56,7 @@ class HomePage(BasePage):
         # Navigate to Cart page
         self.click(self.CART_BUTTON)
 
-    def scroll_to_footer(self):
-        # Scroll to bottom of page
-        self.page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
-
+    # ---------- SUBSCRIBE FUNCTION ----------
     def verify_subscription_visible(self):
         # Verify subscription section is visible
         expect(self.page.locator(self.SUBSCRIPTION_HEADER)).to_be_visible(timeout=5000)
