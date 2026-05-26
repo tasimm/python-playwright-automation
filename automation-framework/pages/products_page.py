@@ -37,8 +37,8 @@ class ProductsPage(BasePage):
 
     def search_product(self, product_name):
         # Enter product name and trigger search
-        self.page.fill(self.SEARCH_INPUT, product_name)
-        self.page.click(self.SEARCH_BUTTON)
+        self.fill(self.SEARCH_INPUT, product_name)
+        self.click(self.SEARCH_BUTTON)
 
     def products_visible(self):
         # Check if the main product list is displayed
@@ -52,7 +52,7 @@ class ProductsPage(BasePage):
 
     def view_cart(self):
         # Open cart from modal and wait for navigation
-        self.page.locator(self.VIEW_CART_BUTTON).click()
+        self.safe_click(self.VIEW_CART_BUTTON)
         self.page.wait_for_url("**/view_cart")
 
     def set_quantity(self, quantity):
@@ -72,13 +72,15 @@ class ProductsPage(BasePage):
 
     def continue_shopping(self):
         # Click Continue Shopping in modal
-        self.page.click(self.CONTINUE_SHOPPING_BUTTON)
+        self.click(self.CONTINUE_SHOPPING_BUTTON)
 
     def add_first_product(self):
-        # Hover first product and add it to the cart
-        self.page.hover(".product-image-wrapper")
+        # Hover first product and add it to cart
+        self.page.locator(self.PRODUCT_CARDS).first.hover()
+
         self.page.locator(self.ADD_TO_CART_BUTTON).first.click()
-        # Wait for modal
+
+        # Wait for cart modal
         self.page.wait_for_selector("#cartModal", timeout=5000)
 
     def add_second_product(self):
@@ -114,7 +116,6 @@ class ProductsPage(BasePage):
 
         # Wait for cart modal to appear
         self.page.wait_for_selector("#cartModal", timeout=5000)
-
 
     def product_detail_visible(self):
         # Verify product detail page is displayed

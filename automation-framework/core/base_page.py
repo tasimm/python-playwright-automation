@@ -12,6 +12,10 @@ class BasePage:
     def click(self, selector):
         self.page.click(selector)
 
+    def hover(self, selector):
+        # Hover over an element
+        self.page.locator(selector).hover()
+
     def fill(self, selector, text):
         self.page.fill(selector, text)
 

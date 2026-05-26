@@ -80,7 +80,7 @@ class SignupPage(BasePage):
         return True
     
     def click_continue(self):
-        self.click(self.CONTINUE_BUTTON)
+        self.safe_click(self.CONTINUE_BUTTON)
 
     def delete_account(self):
         button = self.page.locator(self.DELETE_ACCOUNT_BUTTON)
