@@ -8,6 +8,7 @@ class CartPage(BasePage):
     PRODUCT_QUANTITY = ".cart_quantity"
     PRODUCT_TOTAL = ".cart_total"
     CART_QUANTITY = ".cart_quantity button"
+    REMOVE_PRODUCT_BUTTON = ".cart_quantity_delete"
 
     def cart_has_items(self):
         self.page.wait_for_selector(self.CART_ITEMS, timeout=5000)
@@ -37,3 +38,14 @@ class CartPage(BasePage):
         # Verify cart quantity matches expected value
         actual_quantity = self.page.locator(self.CART_QUANTITY).first.inner_text()
         return actual_quantity == str(quantity)
+    
+    def remove_first_product(self):
+        # Remove the first product from the cart
+        self.page.locator(self.REMOVE_PRODUCT_BUTTON).first.click()
+
+        # Wait for row removal
+        self.page.wait_for_timeout(1000)
+
+    def cart_empty(self):
+        # Verify cart no longer contains products
+        return self.page.locator(self.CART_ITEMS).count() == 0

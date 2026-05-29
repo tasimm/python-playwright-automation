@@ -67,7 +67,7 @@ class CheckoutPage(BasePage):
 
     def pay_and_confirm_order(self):
         # Confirm payment submission
-        self.safe_click(self.PAY_CONFIRM_BUTTON)
+        self.click(self.PAY_CONFIRM_BUTTON)
 
     # ---------- SUCCESS ----------
 
